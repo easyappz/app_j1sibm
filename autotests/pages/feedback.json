@@ -45,13 +45,18 @@
       },
       {
         "action": "waitForRequests",
-        "timeout": 10000
+        "timeout": 5000
       }
     ],
     "assertions": [
       {
         "type": "visibility",
         "selector": "[data-testid=\"success-msg\"]"
+      },
+      {
+        "type": "text",
+        "selector": "[data-testid=\"success-msg\"]",
+        "expectedText": "Спасибо за заявку!"
       }
     ]
   }
