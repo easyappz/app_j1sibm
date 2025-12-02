@@ -1,14 +1,14 @@
 from django.db import models
-from django.core.validators import RegexValidator
+from django.core.validators import RegexValidator, MinLengthValidator
 
 
 class Feedback(models.Model):
-    name = models.CharField(max_length=255, min_length=1)
+    name = models.CharField(max_length=255, validators=[MinLengthValidator(1)])
     phone = models.CharField(
         max_length=20,
         validators=[
             RegexValidator(
-                r'^\+?[7|8][ \\-]?[0-9]{10,}$'
+                r'^\\+?[7|8][ \\-]?[0-9]{10,}$'
             )
         ],
     )
