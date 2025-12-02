@@ -3,12 +3,12 @@ from django.core.validators import RegexValidator
 
 
 class Feedback(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, min_length=1)
     phone = models.CharField(
         max_length=20,
         validators=[
             RegexValidator(
-                r'^\\+?[78][0-9\\s\\-\\(]???[0-9][0-9]{2}[0-9]{7}$'
+                r'^\+?[7|8][ \\-]?[0-9]{10,}$'
             )
         ],
     )

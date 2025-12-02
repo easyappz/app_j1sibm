@@ -13,9 +13,12 @@ class Migration(migrations.Migration):
             name='Feedback',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255)),
-                ('phone', models.CharField(max_length=20, validators=[django.core.validators.RegexValidator(regex=r'^\\+?[78][0-9\\s\\-\\(\\)]???[0-9][0-9]{2}[0-9]{7}$')])),
+                ('name', models.CharField(max_length=255, min_length=1)),
+                ('phone', models.CharField(max_length=20, validators=[django.core.validators.RegexValidator(regex=r'^\+?[7|8][ \\-]?[0-9]{10,}$')])),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
             ],
+            options={
+                'db_table': 'api_feedback',
+            },
         ),
     ]
