@@ -1,12 +1,7 @@
 import React from 'react';
 
-/**
- * Для ИИ: Это заглушка. Обнови этот компонент. Здесь должен быть начальный экран приложения.
- */
-export const Home = () => {
-  return (
-    <div data-easytag="id1-src/components/Home/index.jsx">
-      <div>This is home page</div>
-    </div>
-  );
-};
+export const Home = () => (
+  <div data-easytag="id1-src/components/Home/index.jsx" style={{padding:'100px 20%', textAlign:'center'}}>
+    <h1 data-testid="hello-title" style={{fontSize:'48px', color:'#333', margin:0}}>Привет мир</h1>
+  </div>
+);

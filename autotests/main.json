@@ -1,5 +1,1 @@
-{
-  "pages": [
-    "home.json"
-  ]
-}
+{"pages": ["host.json", "feedback.json"]}

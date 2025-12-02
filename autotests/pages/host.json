@@ -11,6 +11,34 @@
       {
         "type": "url",
         "expectedUrl": "{domain}"
+      },
+      {
+        "type": "visibility",
+        "selector": "[data-testid=\"hello-title\"]"
+      },
+      {
+        "type": "text",
+        "selector": "[data-testid=\"hello-title\"]",
+        "expectedText": "Привет мир"
+      }
+    ]
+  },
+  {
+    "name": "Переход на форму через меню",
+    "steps": [
+      {
+        "action": "navigate",
+        "url": "{domain}"
+      },
+      {
+        "action": "click",
+        "selector": "[data-testid=\"nav-feedback\"]"
+      }
+    ],
+    "assertions": [
+      {
+        "type": "url",
+        "expectedUrl": "{domain}/feedback/"
       }
     ]
   }
