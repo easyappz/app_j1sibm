@@ -1,0 +1,39 @@
+paths:
+  /api/feedback/:
+    post:
+      summary: 'Создать новую заявку обратной связи'
+      operationId: 'createFeedback'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - phone
+              properties:
+                name:
+                  type: string
+                  minLength: 1
+                phone:
+                  type: string
+                  pattern: '^[\\+]?[7|8][ \\-]?[0-9]{10,}$'
+      responses:
+        '201':
+          description: Создана
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  phone:
+                    type: string
+                  created_at:
+                    type: string
+                    format: datetime
+      x-isSecure: false

@@ -1,0 +1,6 @@
+openapi: 3.1.0
+info:
+  title: 'Easyappz API'
+  version: '1.0.0'
+paths:
+  $ref: './paths/feedback-create.yml'
