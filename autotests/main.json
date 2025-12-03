@@ -1,1 +1,9 @@
-{"pages": ["host.json", "feedback.json"]}
+{
+  "pages": [{
+    "name": "Главная страница",
+    "filepath": "host.json"
+  }, {
+    "name": "Страница обратной формы",
+    "filepath": "feedback.json"
+  }],
+}
